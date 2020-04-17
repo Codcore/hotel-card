@@ -1,4 +1,6 @@
 .container.mx-auto.mt-5
   - @model.each do |hotel_card|
     .card
-      .card-body #{hotel_card.title}
+      .card-body
+        = image_tag url_for(hotel_card.image)
+        = hotel_card.title

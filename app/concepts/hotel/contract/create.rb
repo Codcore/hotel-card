@@ -3,6 +3,16 @@ class Hotel::Contract::Create < Reform::Form
   property :address
   property :rating
 
-  validates :title, :address, presence: true
-  validates :rating, numericality: { less_than_or_equal_to: 5, greater_than_or_equal_to: 0 }
+  validation do
+    configure do
+      config.messages = :i18n
+
+      def unique?(value)
+        Hotel.find_by(title: value).nil?
+      end
+    end
+
+    required(:title).filled(:str?, :unique?)
+    required(:address).filled(:str?)
+  end
 end
