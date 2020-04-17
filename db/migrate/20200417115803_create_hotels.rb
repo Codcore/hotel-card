@@ -3,8 +3,8 @@ class CreateHotels < ActiveRecord::Migration[6.0]
     create_table :hotels do |t|
       t.string :title
       t.string :address
-      t.integer :rating
-      t.float :price
+      t.integer :rating, default: 0
+      t.float :price, default: 0.0
 
       t.timestamps
     end

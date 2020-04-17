@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2020_04_17_115803) do
   create_table "hotels", force: :cascade do |t|
     t.string "title"
     t.string "address"
-    t.integer "rating"
-    t.float "price"
+    t.integer "rating", default: 0
+    t.float "price", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
