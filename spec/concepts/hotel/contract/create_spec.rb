@@ -53,7 +53,7 @@ describe Hotel::Contract::Create do
 
   describe '#rating' do
     context 'when less than or equal to 5' do
-      let(:params) { { title: 'Title', address: 'Address', rating: 6 } }
+      let(:params) { { title: 'Title', address: 'Address', rating: ::Hotel::MAX_RATING + 1 } }
 
       it 'is not valid' do
         is_expected.to be_falsey

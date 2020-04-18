@@ -16,6 +16,6 @@ class Hotel::Contract::Create < Reform::Form
 
     required(:title).filled(:unique?)
     required(:address).filled
-    required(:rating).value(lteq?: 5, gteq?: 0)
+    required(:rating).value(lteq?: ::Hotel::MAX_RATING, gteq?: 0)
   end
 end

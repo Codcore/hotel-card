@@ -17,5 +17,13 @@
 
   &__info {
     flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    h5 {
+      font-size: 18px;
+    }
   }
 }

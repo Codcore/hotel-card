@@ -31,12 +31,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'trailblazer'
 gem 'trailblazer-rails'
-gem 'reform', '2.3.rc2'
-gem 'dry-validation', '0.13'
-
 gem "trailblazer-cells"
 gem "cells-slim"
 gem "cells-rails"
+gem 'reform', '2.3.rc2'
+gem 'dry-validation', '0.13'
+
+gem 'acts-as-taggable-on', '~> 6.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
