@@ -1,5 +1,6 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
@@ -62,13 +63,21 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-  #
-end
+  Capybara.javascript_driver = :selenium_chrome_headless
 
-# shoulda-matchers setup
-Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
+  config.before(:suite) do
+    DatabaseCleaner.clean_with :truncation, except: %w(ar_internal_metadata)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
   end
 end
