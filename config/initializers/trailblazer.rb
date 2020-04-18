@@ -1,7 +1,11 @@
 require 'reform'
 require 'reform/form/dry'
-require 'reform/form/coercion'
+require 'dry-types'
 
 Reform::Form.class_eval do
   include Reform::Form::Dry
+end
+
+module Types
+  include Dry::Types()
 end

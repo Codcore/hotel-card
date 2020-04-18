@@ -5,14 +5,17 @@ class Hotel::Contract::Create < Reform::Form
 
   validation do
     configure do
-      config.messages = :i18n
+      def self.messages
+        super.merge(en: { errors: { unique?: 'must be unique' } })
+      end
 
       def unique?(value)
         Hotel.find_by(title: value).nil?
       end
     end
 
-    required(:title).filled(:str?, :unique?)
-    required(:address).filled(:str?)
+    required(:title).filled(:unique?)
+    required(:address).filled
+    required(:rating).value(lteq?: 5, gteq?: 0)
   end
 end

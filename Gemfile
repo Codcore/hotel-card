@@ -31,8 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'trailblazer'
 gem 'trailblazer-rails'
-gem 'reform'
-gem 'dry-validation', '0.11.1'
+gem 'reform', '2.3.rc2'
+gem 'dry-validation', '0.13'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -31,5 +31,5 @@
 
 en:
   errors:
-    unique?: This field should be unique
+    unique?: should be unique
 
