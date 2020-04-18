@@ -1,0 +1,21 @@
+.hotel-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  &__img-wrapper {
+    margin-right: auto;
+    display: inline-block;
+    flex-grow: 1;
+  }
+
+  &__img {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  &__info {
+    flex-grow: 3;
+  }
+}

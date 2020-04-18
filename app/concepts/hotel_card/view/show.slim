@@ -1,0 +1,7 @@
+.card
+  .card-body.hotel-card
+    .hotel-card__img-wrapper
+      = image_tag url_for(model.image), class: 'hotel-card__img'
+
+    .hotel-card__info
+      = model.title

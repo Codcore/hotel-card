@@ -1,0 +1,3 @@
+.container-fluid.mt-3
+  - @model.each do |hotel_card|
+    = concept('hotel_card/cell/show', hotel_card)
