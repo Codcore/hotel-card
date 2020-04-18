@@ -26,4 +26,29 @@
       font-size: 18px;
     }
   }
+
+  &__location {
+    display: table;
+    text-align: start;
+
+    .location__icon {
+      display: table-cell;
+      width: 30px;
+
+      svg {
+        vertical-align: baseline;
+      }
+    }
+
+    .location__address {
+      display: table-cell;
+      vertical-align: bottom;
+      font-size: .875rem;
+      color: #999999
+    }
+  }
+
+  &__actions {
+
+  }
 }

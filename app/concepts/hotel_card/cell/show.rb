@@ -21,4 +21,8 @@ class HotelCard::Cell::Show < Trailblazer::Cell
   def inactive_rating_color
     '#c4c4c4'
   end
+
+  def map_icon_color
+    '#428bca'
+  end
 end
