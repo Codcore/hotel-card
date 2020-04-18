@@ -30,6 +30,7 @@
   &__location {
     display: table;
     text-align: start;
+    border-spacing: 5px;
 
     .location__icon {
       display: table-cell;
@@ -49,6 +50,13 @@
   }
 
   &__actions {
+    display: flex;
+    padding-top: 15px;
+    flex-direction: column;
+    justify-content: space-between;
 
+    .actions__price {
+      text-align: right;
+    }
   }
 }
